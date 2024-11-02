@@ -84,8 +84,20 @@ p {
   font-size: clamp(rem(40), 12.7vh, rem(96));
   font-weight: 700;
 }
-.h2 { font-size: rem(28); }
-.h3 { font-size: rem(24); }
+.h2 {
+  font-size: rem(28);
+
+  & + .h3 {
+    margin-top: rem(16);
+  }
+
+}
+
+.h3 {
+  font-size: rem(18);
+  font-weight: 400;
+  color: $color-text-gray;
+}
 .h4 { font-size: rem(18); }
 
 .link {
@@ -156,6 +168,51 @@ p {
   &__foto-layer-main {
     position: relative;
     z-index: 2;
+  }
+}
+
+.technology-stack {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: clamp(rem(30), 28vh, rem(128));
+    padding-bottom: clamp(rem(30), 28vh, rem(128));
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: rem(33) rem(16);
+    margin-top: rem(64);
+  }
+  &__item {
+    height: rem(56);
+    padding: 0 rem(16);
+    display: flex;
+    align-items: center;
+    border: 1px solid $color-green2;
+    background: $color-black;
+    position: relative;
+
+    &:before {
+      content: '';
+      width: rem(6);
+      height: rem(6);
+      background: $color-green;
+      border-radius: 50%;
+      position: absolute;
+      left: rem(-3);
+      top: rem(-3);
+    }
+  }
+  &__item-icon {
+    margin-right: rem(8);
+  }
+  &__item-ttl {
+    font-weight: 700;
+    line-height: 1.5em;
   }
 }
 

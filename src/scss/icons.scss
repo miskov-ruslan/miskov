@@ -4,10 +4,58 @@
   flex-shrink: 0;
 }
 
-.svg-logo {
-  width: 80px;
-  height: 80px;
-  //background: url($base-url-svg + 'logo.svg') no-repeat;
+.svg-stack-vue {
+  width: 32px;
+  height: 32px;
+  background: url($base-url-svg + 'stack-vue.svg') no-repeat;
+  background-size: contain;
+}
+.svg-stack-javascript {
+  width: 32px;
+  height: 32px;
+  background: url($base-url-svg + 'stack-javascript.svg') no-repeat;
+  background-size: contain;
+}
+.svg-stack-nuxt {
+  width: 32px;
+  height: 32px;
+  background: url($base-url-svg + 'stack-nuxt.svg') no-repeat;
+  background-size: contain;
+}
+.svg-stack-jquery {
+  width: 32px;
+  height: 32px;
+  background: url($base-url-svg + 'stack-jquery.svg') no-repeat;
+  background-size: contain;
+}
+.svg-stack-figma {
+  width: 32px;
+  height: 32px;
+  background: url($base-url-svg + 'stack-figma.svg') no-repeat;
+  background-size: contain;
+}
+.svg-stack-git {
+  width: 32px;
+  height: 32px;
+  background: url($base-url-svg + 'stack-git.svg') no-repeat;
+  background-size: contain;
+}
+.svg-stack-html {
+  width: 32px;
+  height: 32px;
+  background: url($base-url-svg + 'stack-html5.svg') no-repeat;
+  background-size: contain;
+}
+.svg-stack-css {
+  width: 32px;
+  height: 32px;
+  background: url($base-url-svg + 'stack-css3.svg') no-repeat;
+  background-size: contain;
+}
+.svg-stack-webpack {
+  width: 32px;
+  height: 32px;
+  background: url($base-url-svg + 'stack-webpack.svg') no-repeat;
   background-size: contain;
 }
 
