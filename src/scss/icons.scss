@@ -1,0 +1,29 @@
+.svg {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.svg-logo {
+  width: 80px;
+  height: 80px;
+  //background: url($base-url-svg + 'logo.svg') no-repeat;
+  background-size: contain;
+}
+
+.role-icon {
+  width: rem(48);
+  height: rem(48);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .icon {
+    fill: $color-green;
+  }
+}
+
+
+

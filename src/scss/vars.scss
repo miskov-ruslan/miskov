@@ -1,0 +1,22 @@
+// Path
+$base-url-svg: '../assets/img/svg/';
+$base-url-img: '../assets/img/';
+$base-url-sprite: '../assets/img/sprites/';
+
+// Colors
+$color-text-main: #ffffff;
+$color-text-gray: rgba(255, 255, 255, 0.5);
+$color-green: #4cff9e;
+$color-main-bg: #191322;
+$color-second-bg: #1e1a2a;
+
+// Fonts
+$font-geologica: 'Geologica', sans-serif;
+$font-open-sans: 'Open Sans', sans-serif;
+
+
+@use "sass:math";
+
+@function rem($px) {
+  @return math.div($px, 16) * 1rem;
+}

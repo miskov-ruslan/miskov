@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style>
+    .sprite-symbol-usage {display: none;}
+    .sprite-symbol-usage:target {display: inline;}
+  </style><symbol viewBox="0 0 14 14" id="icon-script"><g clip-path="url(#icon-script_a)"><path fill-rule="evenodd" d="M4.354 3.146a.5.5 0 0 1 0 .708L1.207 7l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m5.292 0a.5.5 0 0 1 .708 0l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L12.793 7 9.646 3.854a.5.5 0 0 1 0-.708" clip-rule="evenodd" /></g><defs></defs></symbol><clipPath id="icon-script_a"><path d="M0 0h14v14H0z" /></clipPath></defs><use id="icon-script-usage" xlink:href="#icon-script" class="sprite-symbol-usage" /></svg>
