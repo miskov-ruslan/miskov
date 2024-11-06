@@ -4,11 +4,9 @@ $base-url-img: '../assets/img/';
 $base-url-sprite: '../assets/img/sprites/';
 
 // Colors
-$color-text-main: #ffffff;
-$color-text-gray: rgba(255, 255, 255, 0.5);
 $color-green: #4cff9e;
+$color-white: rgba(255, 255, 255, 1);
 $color-black: rgba(25, 19, 34, 0.9);
-$color-green2: rgba(76, 255, 158, 0.3);
 $color-main-bg: #191322;
 $color-second-bg: #1e1a2a;
 
@@ -22,3 +20,7 @@ $font-open-sans: 'Open Sans', sans-serif;
 @function rem($px) {
   @return math.div($px, 16) * 1rem;
 }
+
+@mixin color-opacity($color, $alpha, $property: color, $extra: null) {
+  #{$property}: #{$extra} rgba(red($color), green($color), blue($color), $alpha);
+} // @include color-opacity($color-white, 0.5, fill);

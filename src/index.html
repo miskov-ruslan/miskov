@@ -11,14 +11,14 @@
     <header class="header">
         <div class="wrapper">
             <section class="intro">
-                <h1 class="h1 intro__ttl">Miskov Ruslan</h1>
-                <div class="intro__role">
+                <h1 class="h1 intro__ttl parallax" data-rellax-speed="1">Miskov Ruslan</h1>
+                <div class="intro__role parallax" data-rellax-speed="0.8">
                     <div class="role-icon">
                         <svg class="icon" width="24" height="24">
                             <use xlink:href="./assets/img/sprite.svg#icon-script"></use>
                         </svg>
                     </div>
-                    <div class="intro__role-ttl">Front-end Developer<br>HTML Coder</div>
+                    <div class="intro__role-ttl typing">Front-end Developer, HTML Coder</div>
                 </div>
             </section>
         </div>
@@ -27,23 +27,23 @@
         <section class="about-me">
             <div class="wrapper">
                 <div class="about-me__info">
-                    <h2 class="h2">About me</h2>
-                    <p>With 6+ years in Front-end development, including 2+ with Vue 2, I have a strong grasp of the full development lifecycle. I’m skilled in setting up scalable, maintainable applications with a focus on clean architecture, reusability, and performance.</p>
-                    <p>I enjoy working with designers and backend developers to build seamless, user-centered solutions. Committed to continuous learning, I stay current with front-end best practices and trends.</p>
+                    <h2 class="h2" data-rellax-speed="0.5">About me</h2>
+                    <p data-rellax-speed="0.4">With 6+ years in Front-end development, including 2+ with Vue 2, I have a strong grasp of the full development lifecycle. I’m skilled in setting up scalable, maintainable applications with a focus on clean architecture, reusability, and performance.</p>
+                    <p data-rellax-speed="0.3">I enjoy working with designers and backend developers to build seamless, user-centered solutions. Committed to continuous learning, I stay current with front-end best practices and trends.</p>
                     <div class="role-icon">
                         <svg class="icon" width="24" height="24">
                             <use xlink:href="./assets/img/sprite.svg#icon-script"></use>
                         </svg>
                     </div>
                 </div>
-                <div class="about-me__foto">
-                    <div class="about-me__foto-layer-bg">
+                <div class="about-me__foto tilt">
+                    <div class="about-me__foto-layer-bg parallax" data-rellax-speed="-0.25">
                         <picture>
                             <source width="432" height="543" srcset="/assets/img/foto-layer-bg.png" media="(min-width: 600px)" />
                             <img width="432" height="543" src="/assets/img/foto-layer-bg.png" alt="foto by Miskov Ruslan" />
                         </picture>
                     </div>
-                    <div class="about-me__foto-layer-main">
+                    <div class="about-me__foto-layer-main parallax" data-rellax-speed="0.4">
                         <picture>
                             <source width="448" height="488" srcset="/assets/img/foto-layer-main.png" media="(min-width: 600px)" />
                             <img width="448" height="488" src="/assets/img/foto-layer-main.png" alt="foto by Miskov Ruslan" />
@@ -51,12 +51,16 @@
                     </div>
                 </div>
             </div>
+            <div class="about-me__bg-text parallax" data-rellax-speed="3">About me</div>
+            <div class="svg svg-figure-1 parallax" data-rellax-speed="-3"></div>
+            <div class="svg svg-figure-2 parallax" data-rellax-speed="0.5"></div>
+            <div class="svg svg-figure-3 parallax" data-rellax-speed="-1"></div>
+            <div class="svg svg-figure-4 parallax" data-rellax-speed="1"></div>
         </section>
         <section class="technology-stack">
             <div class="wrapper">
                 <h2 class="h2">Technology stack</h2>
                 <h3 class="h3">That I use in my work</h3>
-
                 <ul class="technology-stack__list">
                     <li class="technology-stack__item">
                         <div class="technology-stack__item-icon">
@@ -138,20 +142,22 @@
                     </li>
                 </ul>
             </div>
+            <div class="svg svg-figure-5 parallax" data-rellax-speed="-1"></div>
+            <div class="svg svg-figure-6 parallax" data-rellax-speed="-1"></div>
         </section>
         <section class="examples">
             <div class="wrapper">
                 <h2 class="h2">Examples of my work</h2>
                 <ul class="examples__list">
-                    <li class="examples__item">
+                    <li class="tilt examples__item wow animate__animated animate__fadeIn">
                         <div class="examples__item-img"><img src="/assets/img/example/romania.jpg" alt="Meet Romania"></div>
                         <h4 class="h4 examples__item-ttl">Meet Romania</h4>
                     </li>
-                    <li class="examples__item">
-                        <div class="examples__item-img"><img src="/assets/img/example/skarb.jpg" alt="Meet Romania"></div>
-                        <h4 class="h4 examples__item-ttl">skarbnica account</h4>
+                    <li class="tilt examples__item wow animate__animated animate__fadeIn" data-wow-delay="0.2s">
+                        <div class="examples__item-img"><img src="/assets/img/example/skarb.jpg" alt="Skarbnica Account"></div>
+                        <h4 class="h4 examples__item-ttl">Skarbnica Account</h4>
                     </li>
-                    <li class="examples__item">
+                    <li class="tilt examples__item wow animate__animated animate__fadeIn" data-wow-delay="0.4s">
                         <h4 class="h4 examples__item-ttl">Maybe yours?</h4>
                     </li>
                 </ul>
@@ -159,7 +165,40 @@
         </section>
     </main>
     <footer class="footer">
-        <div class="wrapper"></div>
+        <section class="contact">
+            <div class="wrapper">
+                <h2 class="h2">Contact me</h2>
+                <div class="contact__box">
+                    <div class="contact__email">
+                        <a href="mailto:miskov.ruslan@gmail.com" class="btn btn-full">SEND ME AN EMAIL</a>
+                        <div class="contact__email-info">
+                            <svg class="icon" width="24" height="24">
+                                <use xlink:href="./assets/img/sprite.svg#icon-email"></use>
+                            </svg>
+                            <span class="contact__email-ttl">miskov.ruslan@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="contact__or">OR</div>
+                    <div class="contact__download">
+                        <a target="_blank" href="/assets/files/Miskov_Ruslan_Middle_Frontend_Developer_(Vue.js),HTML-Coder.pdf" class="btn btn-empty">
+                            <span class="btn-ttl">Download resume</span>
+                        </a>
+                        <div class="contact__download-info">
+                            <svg class="icon" width="24" height="24">
+                                <use xlink:href="./assets/img/sprite.svg#icon-download"></use>
+                            </svg>
+                            <span class="contact__download-info__ttl">.pdf (455KБ)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="copyright">
+            <div class="wrapper">
+                <div class="copyright__text">© 2024 All Rights Reserved</div>
+            </div>
+        </section>
+        <div id="particles-js"></div>
     </footer>
 </div>
 </body>

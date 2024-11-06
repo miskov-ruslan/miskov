@@ -15,10 +15,14 @@ export function initVanta(selector) {
         gyroControls: false,
         minHeight: 200.00,
         minWidth: 200.00,
-        scale: 1.00,
+        scale: 0.5,
         scaleMobile: 1.00,
         color: 0x4cff9e,
-        backgroundColor: 0x191322
+        backgroundColor: 0x191322,
+        backgroundAlpha: 0.0,
+        points: 10.00,
+        maxDistance: 22.00,
+        spacing: 16.00
     });
 }
 

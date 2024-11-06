@@ -13,7 +13,7 @@ html {
 body {
   font-family: $font-open-sans;
   font-size: rem(18);
-  color: $color-text-main;
+  color: $color-white;
   min-width: rem(410);
   background: $color-main-bg;
 }
@@ -25,7 +25,7 @@ use {
 p {
   font-weight: 400;
   line-height: 1.5em;
-  color: $color-text-gray;
+  @include color-opacity($color-white, 0.5);
 
   & + p {
     margin-top: rem(16);
@@ -49,8 +49,10 @@ p {
 }
 
 .header {
+  background: linear-gradient(0deg, hsla(221, 20%, 16%, 0.3) 0%, hsla(264, 28%, 10%, 1) 70%);
+
   &, & .wrapper {
-    height: 80vh;
+    height: 100vh;
   }
   .wrapper {
     display: flex;
@@ -60,6 +62,7 @@ p {
 
 .main {
   padding-bottom: rem(83);
+  overflow: hidden;
 }
 
 .inner {
@@ -85,7 +88,7 @@ p {
   font-weight: 700;
 }
 .h2 {
-  font-size: rem(28);
+  font-size: rem(40);
 
   & + .h3 {
     margin-top: rem(16);
@@ -96,7 +99,7 @@ p {
 .h3 {
   font-size: rem(18);
   font-weight: 400;
-  color: $color-text-gray;
+  @include color-opacity($color-white, 0.5);
 }
 .h4 {
   font-weight: 600;
@@ -130,7 +133,7 @@ p {
 
 .intro {
   &__ttl {
-    color: $color-text-main;
+    color: $color-white;
   }
   &__role {
     display: flex;
@@ -145,7 +148,8 @@ p {
 }
 
 .about-me {
-  background: $color-second-bg;
+  background: $color-main-bg;
+  position: relative;
 
   .wrapper {
     padding-top: clamp(rem(30), 28vh, rem(128));
@@ -154,6 +158,25 @@ p {
     justify-content: space-between;
     align-items: center;
     gap: 0 rem(32);
+    position: relative;
+    z-index: 1;
+  }
+
+  &__bg-text {
+    font-weight: 700;
+    left: 0;
+    right: 0;
+    font-size: clamp(2rem, 15.3vw, rem(240));
+    text-transform: uppercase;
+    color: $color-second-bg;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 1.1;
+    z-index: 0;
+    opacity: 0.6;
   }
 
   &__info {
@@ -176,6 +199,9 @@ p {
 }
 
 .technology-stack {
+  background: $color-second-bg;
+  position: relative;
+
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -196,7 +222,7 @@ p {
     padding: 0 rem(16);
     display: flex;
     align-items: center;
-    border: 1px solid $color-green2;
+    @include color-opacity($color-green, 0.3, border, 1px solid);
     background: $color-black;
     position: relative;
 
@@ -220,6 +246,7 @@ p {
   }
 }
 
+
 .examples {
 
   .wrapper {
@@ -236,10 +263,53 @@ p {
     grid-column-gap: rem(16);
   }
   &__item {
-    height: rem(260);
-    overflow: hidden;
     position: relative;
     background: $color-second-bg;
+    cursor: pointer;
+
+    &:hover {
+      padding: rem(1);
+    }
+
+    &:hover::before,
+    &:hover::after {
+      animation: spin 6s linear infinite;
+      opacity: .7;
+    }
+
+    &::before {
+      content: "";
+      background-image: linear-gradient(var(--rotate), #4cff9e, rgba(76, 255, 158, 0.1) 43%, #191322);
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      height: 100%;
+      width: 100%;
+      margin: 0 auto;
+      transform: scale(0.8);
+      filter: blur(calc(65vh / 10));
+      background-image: linear-gradient(var(--rotate), #4cff9e, rgba(76, 255, 158, 0.1) 43%, #191322);
+      transition: opacity .5s;
+      opacity: 0;
+    }
+
+  }
+
+  &__item-img,
+  &__item-ttl {
+    position: relative;
+    z-index: 2;
   }
   &__item-img {
     img {
@@ -255,6 +325,146 @@ p {
     right: rem(16);
     text-align: center;
   }
+}
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+// Анимация вращения градиента
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+
+.footer {
+  background: linear-gradient(180deg, hsla(264, 28%, 10%, 0) 20%, hsla(221, 20%, 16%, 1) 100%);
+  position: relative;
+
+  canvas {
+    display: block;
+    vertical-align: bottom;
+  }
+}
+
+.contact {
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: clamp(rem(30), 23vh, rem(111));
+  }
+  &__box {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0 rem(48);
+    margin-top: rem(17);
+    padding-top: clamp(rem(30), 15vh, rem(63));
+    padding-bottom: clamp(rem(30), 15vh, rem(63));
+    position: relative;
+    z-index: 2;
+
+    &:before {
+      content: '';
+      width: rem(1);
+      height: 100%;
+      @include color-opacity($color-white, 0.1, background);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__email-info {
+    display: flex;
+    align-items: center;
+    margin-top: rem(16);
+
+    .icon {
+      @include color-opacity($color-white, 0.5, fill);
+    }
+  }
+  &__email-ttl {
+    margin-left: rem(8);
+    font-size: rem(16);
+    @include color-opacity($color-white, 0.5);
+  }
+  &__or {
+    line-height: 1.5em;
+    @include color-opacity($color-white, 0.5);
+    height: rem(48);
+    display: flex;
+    align-items: center;
+  }
+  &__download-info {
+    margin-top: rem(16);
+    display: flex;
+    align-items: center;
+
+    .icon {
+      @include color-opacity($color-white, 0.5, fill);
+    }
+    &__ttl {
+      font-size: 16px;
+      @include color-opacity($color-white, 0.5);
+      margin-left: rem(8);
+    }
+  }
+}
+
+.copyright {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: clamp(rem(30), 25vh, rem(140));
+    padding-bottom: rem(48);
+  }
+  &__text {
+    font-size: rem(14);
+    @include color-opacity($color-white, 0.5);
+  }
+}
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+.typing {
+  width: 31ch;
+  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
 }
 
 
