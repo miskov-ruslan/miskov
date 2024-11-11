@@ -10,10 +10,11 @@
   transition: all .3s ease;
   width: 100%;
   cursor: pointer;
-  border: none;
   padding: 0 rem(6);
   overflow: hidden;
   position: relative;
+  border: 1px solid $color-green;
+
 
   .btn-ttl {
     position: relative;
@@ -21,14 +22,64 @@
   }
 
   &.btn-full {
-    background: $color-green;
     color: $color-main-bg;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: $color-green;
+      z-index: -1;
+      transition: all .5s;
+    }
+    &:hover::before {
+      width: 1px;
+      transition: .5s;
+    }
+
+    &:hover {
+      animation: colorize .5s ease-in-out forwards reverse;
+    }
   }
   &.btn-empty {
     background: none;
     color: $color-white;
-    border: 1px solid $color-green;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 1px;
+      background-color: $color-green;
+      z-index: -1;
+      transition: all .5s;
+    }
+    &:hover::before {
+      width: 100%;
+      transition: .5s;
+    }
+
+    &:hover {
+      animation: colorize .5s ease-in-out forwards;
+    }
+
   }
 
 }
 
+@keyframes colorize {
+  0% {
+    color: $color-white;
+  }
+  25% {
+    color: $color-white;
+  }
+  100% {
+    color: $color-main-bg;
+  }
+}

@@ -24,3 +24,4 @@ $font-open-sans: 'Open Sans', sans-serif;
 @mixin color-opacity($color, $alpha, $property: color, $extra: null) {
   #{$property}: #{$extra} rgba(red($color), green($color), blue($color), $alpha);
 } // @include color-opacity($color-white, 0.5, fill);
+

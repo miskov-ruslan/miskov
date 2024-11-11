@@ -8,7 +8,7 @@ const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 
-const outputDirectoryHTML = isProd ? path.resolve(__dirname, 'dist') : '';
+const outputDirectoryHTML = path.resolve(__dirname, 'dist');
 
 const plugins = [
     new HTMLWebpackPlugin({
@@ -18,7 +18,7 @@ const plugins = [
         chunks: ['app', 'vanta']
     }),
 
-    // new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(),
 
     new MiniCssExtractPlugin({
         filename: 'css/[name].css'
@@ -30,7 +30,6 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry: {
-        // js
         app: './app.js',
         vanta: './utils/vanta.js',
         popup: './utils/popup.js',
@@ -39,7 +38,7 @@ module.exports = {
     },
     output: {
         filename: 'js/[name].js',
-        path: path.resolve(__dirname, '../web')
+        path: path.resolve(__dirname, 'dist'),
     },
     resolve: {
         alias: {
@@ -83,7 +82,7 @@ module.exports = {
                         loader: 'svg-sprite-loader',
                         options: {
                             extract: true,
-                            spriteFilename: '../public/src/assets/img/sprite.svg',
+                            spriteFilename: './src/assets/img/sprite.svg',
                             symbolId: 'icon-[name]'
                         },
                     },

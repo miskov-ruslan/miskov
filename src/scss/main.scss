@@ -147,6 +147,23 @@ p {
   }
 }
 
+.bg-text {
+  font-weight: 700;
+  left: 0;
+  right: 0;
+  font-size: clamp(2rem, 15.3vw, rem(240));
+  text-transform: uppercase;
+  color: $color-second-bg;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 1.1;
+  z-index: 0;
+  opacity: 0.6;
+}
+
 .about-me {
   background: $color-main-bg;
   position: relative;
@@ -160,23 +177,6 @@ p {
     gap: 0 rem(32);
     position: relative;
     z-index: 1;
-  }
-
-  &__bg-text {
-    font-weight: 700;
-    left: 0;
-    right: 0;
-    font-size: clamp(2rem, 15.3vw, rem(240));
-    text-transform: uppercase;
-    color: $color-second-bg;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    white-space: nowrap;
-    text-align: center;
-    line-height: 1.1;
-    z-index: 0;
-    opacity: 0.6;
   }
 
   &__info {
@@ -202,12 +202,19 @@ p {
   background: $color-second-bg;
   position: relative;
 
+  .bg-text {
+    color: $color-main-bg;
+    opacity: 0.4;
+  }
+
   .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: clamp(rem(30), 28vh, rem(128));
     padding-bottom: clamp(rem(30), 28vh, rem(128));
+    position: relative;
+    z-index: 1;
   }
 
   &__list {
@@ -266,20 +273,17 @@ p {
     position: relative;
     background: $color-second-bg;
     cursor: pointer;
-
-    &:hover {
-      padding: rem(1);
-    }
+    padding: rem(1);
 
     &:hover::before,
     &:hover::after {
+      background-image: linear-gradient(var(--rotate), #4cff9e, rgba(76, 255, 158, 0.1) 43%, #191322);
       animation: spin 6s linear infinite;
       opacity: .7;
     }
 
     &::before {
       content: "";
-      background-image: linear-gradient(var(--rotate), #4cff9e, rgba(76, 255, 158, 0.1) 43%, #191322);
       position: absolute;
       z-index: 1;
       top: 0;
@@ -312,10 +316,16 @@ p {
     z-index: 2;
   }
   &__item-img {
+    overflow: hidden;
+
     img {
       object-fit: cover;
       width: 100%;
       height: rem(260);
+      filter: grayscale(100%);
+      transition: filter 0.5s ease;
+      position: relative;
+      z-index: 1;
     }
   }
   &__item-ttl {
@@ -324,6 +334,7 @@ p {
     left: rem(16);
     right: rem(16);
     text-align: center;
+    pointer-events: none;
   }
 }
 
@@ -459,7 +470,7 @@ p {
 }
 
 .typing {
-  width: 31ch;
+  width: 37ch;
   animation: typing 2s steps(22), blink .5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
@@ -467,6 +478,53 @@ p {
   font-family: monospace;
 }
 
+.spin-animate {
+  animation: spin-svg 60s linear infinite;
+}
+
+@keyframes spin-svg {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.svg-box {
+  position: absolute;
+
+  &.figure-1 {
+    left: -5%;
+    top: 27%;
+  }
+  &.figure-2 {
+    right: 40%;
+    top: 28%;
+    z-index: 1;
+  }
+  &.figure-3 {
+    right: 49%;
+    bottom: 0;
+  }
+  &.figure-4 {
+    right: -2%;
+    bottom: 8%;
+  }
+  &.figure-5 {
+    right: -1%;
+    top: 0;
+  }
+  &.figure-6 {
+    left: 18%;
+    bottom: -18%;
+  }
+}
+
+.technology-stack__item {
+  position: relative;
+  overflow: hidden;
+}
 
 
 // Media
