@@ -12,7 +12,7 @@ export function initVanta(selector) {
         THREE: THREE,
         mouseControls: true,
         touchControls: true,
-        gyroControls: false,
+        gyroControls: true,
         minHeight: 200.00,
         minWidth: 200.00,
         scale: 0.5,
@@ -22,7 +22,7 @@ export function initVanta(selector) {
         backgroundAlpha: 0.0,
         points: 10.00,
         maxDistance: 22.00,
-        spacing: 16.00
+        spacing: 16.00,
     });
 }
 

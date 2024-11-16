@@ -1,7 +1,13 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import ScrollSmoother from "./ScrollSmoother.min";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+ScrollSmoother.create({
+    smooth: .5,
+    effects: true,
+});
 
 const images = document.querySelectorAll(".examples__item-img img");
 
@@ -50,3 +56,32 @@ stackItems.forEach((item, index) => {
         }
     });
 });
+
+const timeline = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".about-me__foto",
+        start: "top 90%",
+        end: "bottom 90%",
+        scrub: 1,
+        toggleActions: "play none none none"
+    }
+});
+
+timeline
+    .fromTo(".about-me__info",
+        { opacity: 0, y: 50 },  // Начальное состояние
+        { opacity: 1, y: 0 }    // Конечное состояние
+    )
+    .fromTo(".about-me__foto",
+        { opacity: 0, y: 50 },  // Начальное состояние
+        { opacity: 1, y: 0 },   // Конечное состояние
+        "<"                     // Одновременный запуск
+    );
+
+const introTl = gsap.timeline();
+const introTlSettings = { scale: 1.2, duration: 1.1, ease: "power1.out" };
+
+introTl
+    .from(".h1", introTlSettings)
+    .from(".intro__role", introTlSettings, "<");
+

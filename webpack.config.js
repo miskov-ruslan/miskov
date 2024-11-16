@@ -32,9 +32,6 @@ module.exports = {
     entry: {
         app: './app.js',
         vanta: './utils/vanta.js',
-        popup: './utils/popup.js',
-        nav: './utils/nav.js',
-        carousel: './utils/slick-carousel.js',
     },
     output: {
         filename: 'js/[name].js',

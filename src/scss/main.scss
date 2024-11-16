@@ -18,6 +18,12 @@ body {
   background: $color-main-bg;
 }
 
+::selection {
+  background-color: $color-green;
+  color: $color-black;
+}
+
+
 use {
   pointer-events: none;
 }
@@ -39,6 +45,7 @@ p {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  will-change: transform;
 }
 
 .wrapper {
@@ -84,7 +91,7 @@ p {
 }
 
 .h1 {
-  font-size: clamp(rem(40), 12.7vh, rem(96));
+  font-size: calc($index * 4);
   font-weight: 700;
 }
 .h2 {
@@ -105,6 +112,10 @@ p {
   font-weight: 600;
   font-size: rem(24);
   color: #fff;
+}
+
+.parallax {
+  will-change: transform;
 }
 
 .link {
@@ -144,6 +155,7 @@ p {
     margin-left: rem(15);
     font-weight: 600;
     line-height: 1.5em;
+    font-size: calc($index * 0.9);
   }
 }
 
@@ -151,7 +163,7 @@ p {
   font-weight: 700;
   left: 0;
   right: 0;
-  font-size: clamp(2rem, 15.3vw, rem(240));
+  font-size: calc($index * 10);
   text-transform: uppercase;
   color: $color-second-bg;
   position: absolute;
@@ -367,6 +379,11 @@ p {
 }
 
 .contact {
+  .h2,
+  .contact__email,
+  .contact__download {
+    z-index: 2;
+  }
 
   .wrapper {
     display: flex;
@@ -382,7 +399,6 @@ p {
     padding-top: clamp(rem(30), 15vh, rem(63));
     padding-bottom: clamp(rem(30), 15vh, rem(63));
     position: relative;
-    z-index: 2;
 
     &:before {
       content: '';
@@ -495,7 +511,7 @@ p {
   position: absolute;
 
   &.figure-1 {
-    left: -5%;
+    left: -2%;
     top: 27%;
   }
   &.figure-2 {
@@ -525,7 +541,6 @@ p {
   position: relative;
   overflow: hidden;
 }
-
 
 // Media
 
