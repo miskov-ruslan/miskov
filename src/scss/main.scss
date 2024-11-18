@@ -91,7 +91,7 @@ p {
 }
 
 .h1 {
-  font-size: calc($index * 4);
+  font-size: min(calc($index * 4), rem(96));
   font-weight: 700;
 }
 .h2 {
@@ -155,7 +155,7 @@ p {
     margin-left: rem(15);
     font-weight: 600;
     line-height: 1.5em;
-    font-size: calc($index * 0.9);
+    font-size: min(calc($index * 0.9), rem(18));
   }
 }
 
@@ -163,7 +163,7 @@ p {
   font-weight: 700;
   left: 0;
   right: 0;
-  font-size: calc($index * 10);
+  font-size: min(calc($index * 10), rem(260));
   text-transform: uppercase;
   color: $color-second-bg;
   position: absolute;
@@ -379,9 +379,7 @@ p {
 }
 
 .contact {
-  .h2,
-  .contact__email,
-  .contact__download {
+  .h2 {
     z-index: 2;
   }
 
@@ -399,6 +397,7 @@ p {
     padding-top: clamp(rem(30), 15vh, rem(63));
     padding-bottom: clamp(rem(30), 15vh, rem(63));
     position: relative;
+    z-index: 2;
 
     &:before {
       content: '';

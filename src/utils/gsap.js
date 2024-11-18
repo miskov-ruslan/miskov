@@ -46,37 +46,41 @@ const stackItems = document.querySelectorAll(".technology-stack__item");
 stackItems.forEach((item, index) => {
     gsap.from(item, {
         borderColor: 'transparent',
+        opacity: 0,
+        yoyo: true,
         duration: 0.3,             // Длительность анимации
         ease: "power2.out",      // Плавное затухание
-        delay: index * 0.1,      // Задержка, чтобы эффект срабатывал последовательно
+        delay: index / 12,      // Задержка, чтобы эффект срабатывал последовательно
         scrollTrigger: {
-            trigger: item,         // Запускаем для каждой карточки
+            trigger: ".technology-stack__list",         // Запускаем для каждой карточки
             start: "top 80%",      // Анимация начнётся, когда верх карточки достигнет 80% от высоты окна
             toggleActions: "play none none reverse", // Повтор анимации при скролле назад
         }
     });
 });
 
-const timeline = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".about-me__foto",
-        start: "top 90%",
-        end: "bottom 90%",
-        scrub: 1,
-        toggleActions: "play none none none"
-    }
+const upTl = gsap.timeline({});
+const upTlSettings = { y: 60, opacity: 0, ease: "power2.out" }
+const UpElements = [
+    ".about-me__info .h2",
+    ".about-me__info p",
+    ".about-me__info .role-icon",
+    ".about-me__foto",
+    ".technology-stack .h2",
+    ".technology-stack .h3",
+    ".technology-stack__list",
+    ".examples .h2",
+    ".examples__list",
+    ".contact .h2",
+    ".contact__box"
+];
+
+UpElements.forEach((element) => {
+    upTl.from(element, {
+        scrollTrigger: { trigger: element, start: "top bottom", scrub: 1}, ...upTlSettings
+    });
 });
 
-timeline
-    .fromTo(".about-me__info",
-        { opacity: 0, y: 50 },  // Начальное состояние
-        { opacity: 1, y: 0 }    // Конечное состояние
-    )
-    .fromTo(".about-me__foto",
-        { opacity: 0, y: 50 },  // Начальное состояние
-        { opacity: 1, y: 0 },   // Конечное состояние
-        "<"                     // Одновременный запуск
-    );
 
 const introTl = gsap.timeline();
 const introTlSettings = { scale: 1.2, duration: 1.1, ease: "power1.out" };
