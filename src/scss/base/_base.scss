@@ -1,0 +1,113 @@
+
+body {
+  font-family: $font-open-sans;
+  font-size: rem(18);
+  color: $color-white;
+  min-width: rem(410);
+  background: $color-main-bg;
+}
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+
+.main {
+  padding-bottom: rem(83);
+  overflow: hidden;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0 rem(32) 0;
+  width: 100%;
+  max-width: rem(1200);
+}
+
+::selection {
+  background-color: $color-green;
+  color: $color-black;
+}
+
+p {
+  font-weight: 400;
+  line-height: 1.5em;
+  @include color-opacity($color-white, 0.5);
+
+  & + p {
+    margin-top: rem(16);
+  }
+  & + .role-icon {
+    margin-top: rem(64);
+  }
+}
+
+.h1, .h2, .h3, .h4 {
+  line-height: 1.2em;
+  color: $color-green;
+  font-family: $font-geologica;
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  & + p {
+    margin-top: rem(16);
+  }
+}
+
+.h1 {
+  font-size: min(calc($index * 4), rem(96));
+  font-weight: 700;
+}
+
+.h2 {
+  font-size: rem(40);
+
+  & + .h3 {
+    margin-top: rem(16);
+  }
+
+}
+
+.h3 {
+  font-size: rem(18);
+  font-weight: 400;
+  @include color-opacity($color-white, 0.5);
+}
+
+.h4 {
+  font-weight: 600;
+  font-size: rem(24);
+  color: #fff;
+}
+
+.parallax {
+  will-change: transform;
+}
+
+.link {
+  color: red;
+  transition: all, 0.3s, ease;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+    color: blue;
+  }
+}
+
+.t-center {
+  text-align: center;
+}
+.hidden {
+  visibility: hidden !important;
+}
+.show {
+  display: block !important;
+}
+.hide {
+  display: none !important;
+}
+

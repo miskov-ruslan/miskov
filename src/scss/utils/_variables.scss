@@ -17,14 +17,3 @@ $font-open-sans: 'Open Sans', sans-serif;
 // Sizes
 $index: calc(1vw + 1vh);
 
-
-@use "sass:math";
-
-@function rem($px) {
-  @return math.div($px, 16) * 1rem;
-}
-
-@mixin color-opacity($color, $alpha, $property: color, $extra: null) {
-  #{$property}: #{$extra} rgba(red($color), green($color), blue($color), $alpha);
-} // @include color-opacity($color-white, 0.5, fill);
-
