@@ -1,12 +1,12 @@
-const path = require('path')
-const HTMLWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
-const isDev = process.env.NODE_ENV === 'development'
-const isProd = !isDev
+const isDev = process.env.NODE_ENV === 'development';
+const isProd = !isDev;
 
 const outputDirectoryHTML = path.resolve(__dirname, 'dist');
 
@@ -24,7 +24,7 @@ const plugins = [
         filename: 'css/[name].css'
     }),
     new SpriteLoaderPlugin(),
-]
+];
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -57,12 +57,36 @@ module.exports = {
                 test: /\.css$/i,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    'css-loader'
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    require('autoprefixer')()
+                                ],
+                            },
+                        },
+                    },
                 ]
             },
             {
                 test: /\.s[ac]ss$/i,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    require('autoprefixer')()
+                                ],
+                            },
+                        },
+                    },
+                    'sass-loader'
+                ]
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -111,4 +135,4 @@ module.exports = {
     stats: {
         children: true
     }
-}
+};
