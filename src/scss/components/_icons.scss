@@ -5,94 +5,49 @@
 }
 
 .svg-stack-vue {
-  width: 32px;
-  height: 32px;
-  background: url($base-url-svg + 'stack-vue.svg') no-repeat;
-  background-size: contain;
+  @include svg-icon(32px, 32px, 'stack-vue');
 }
 .svg-stack-javascript {
-  width: 32px;
-  height: 32px;
-  background: url($base-url-svg + 'stack-javascript.svg') no-repeat;
-  background-size: contain;
+  @include svg-icon(32px, 32px, 'stack-javascript');
 }
 .svg-stack-nuxt {
-  width: 32px;
-  height: 32px;
-  background: url($base-url-svg + 'stack-nuxt.svg') no-repeat;
-  background-size: contain;
+  @include svg-icon(32px, 32px, 'stack-nuxt');
 }
 .svg-stack-jquery {
-  width: 32px;
-  height: 32px;
-  background: url($base-url-svg + 'stack-jquery.svg') no-repeat;
-  background-size: contain;
+  @include svg-icon(32px, 32px, 'stack-jquery');
 }
 .svg-stack-figma {
-  width: 32px;
-  height: 32px;
-  background: url($base-url-svg + 'stack-figma.svg') no-repeat;
-  background-size: contain;
+  @include svg-icon(32px, 32px, 'stack-figma');
 }
 .svg-stack-git {
-  width: 32px;
-  height: 32px;
-  background: url($base-url-svg + 'stack-git.svg') no-repeat;
-  background-size: contain;
+  @include svg-icon(32px, 32px, 'stack-git');
 }
 .svg-stack-html {
-  width: 32px;
-  height: 32px;
-  background: url($base-url-svg + 'stack-html5.svg') no-repeat;
-  background-size: contain;
+  @include svg-icon(32px, 32px, 'stack-html5');
 }
 .svg-stack-css {
-  width: 32px;
-  height: 32px;
-  background: url($base-url-svg + 'stack-css3.svg') no-repeat;
-  background-size: contain;
+  @include svg-icon(32px, 32px, 'stack-css3');
 }
 .svg-stack-webpack {
-  width: 32px;
-  height: 32px;
-  background: url($base-url-svg + 'stack-webpack.svg') no-repeat;
-  background-size: contain;
+  @include svg-icon(32px, 32px, 'stack-webpack');
 }
 .svg-figure-1 {
-  width: 141px;
-  height: 137px;
-  background: url($base-url-svg + 'figure-1.svg') no-repeat;
-  background-size: contain;
+  @include svg-icon(141px, 137px, 'figure-1');
 }
 .svg-figure-2 {
-  width: 154px;
-  height: 132px;
-  background: url($base-url-svg + 'figure-2.svg') no-repeat;
-  background-size: contain;
+  @include svg-icon(154px, 132px, 'figure-2');
 }
 .svg-figure-3 {
-  width: 296px;
-  height: 294px;
-  background: url($base-url-svg + 'figure-3.svg') no-repeat;
-  background-size: contain;
+  @include svg-icon(296px, 294px, 'figure-3');
 }
 .svg-figure-4 {
-  width: 96px;
-  height: 96px;
-  background: url($base-url-svg + 'figure-4.svg') no-repeat;
-  background-size: contain;
+  @include svg-icon(96px, 96px, 'figure-4');
 }
 .svg-figure-5 {
-  width: 365px;
-  height: 322px;
-  background: url($base-url-svg + 'figure-5.svg') no-repeat;
-  background-size: contain;
+  @include svg-icon(365px, 322px, 'figure-5');
 }
 .svg-figure-6 {
-  width: 191px;
-  height: 199px;
-  background: url($base-url-svg + 'figure-6.svg') no-repeat;
-  background-size: contain;
+  @include svg-icon(191px, 199px, 'figure-6');
 }
 
 .role-icon {

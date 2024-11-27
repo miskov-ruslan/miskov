@@ -1,3 +1,5 @@
+
+
 @use "sass:math";
 
 @function rem($px) {
@@ -7,3 +9,10 @@
 @mixin color-opacity($color, $alpha, $property: color, $extra: null) {
   #{$property}: #{$extra} rgba(red($color), green($color), blue($color), $alpha);
 } // @include color-opacity($color-white, 0.5, fill);
+
+@mixin svg-icon($width, $height, $svg-name, $bg-size: contain) {
+  width: $width;
+  height: $height;
+  background: url($base-url-svg + $svg-name + '.svg') no-repeat;
+  background-size: $bg-size;
+} // @include svg-icon(23px, 23px, logo)
