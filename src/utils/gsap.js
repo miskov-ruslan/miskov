@@ -5,7 +5,7 @@ import ScrollSmoother from "./ScrollSmoother.min";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 ScrollSmoother.create({
-    smooth: .5,
+    smooth: 1,
     effects: true,
 });
 
@@ -60,7 +60,7 @@ stackItems.forEach((item, index) => {
 });
 
 const upTl = gsap.timeline({});
-const upTlSettings = { y: 60, opacity: 0, ease: "power2.out" }
+const upTlSettings = { y: 40, opacity: 0, ease: "power2.out" }
 const UpElements = [
     ".about-me__info .h2",
     ".about-me__info p",
@@ -88,4 +88,6 @@ const introTlSettings = { scale: 1.2, duration: 1.1, ease: "power1.out" };
 introTl
     .from(".h1", introTlSettings)
     .from(".intro__role", introTlSettings, "<");
+
+
 
