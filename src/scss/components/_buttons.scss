@@ -16,6 +16,10 @@
   border: 1px solid $color-green;
   user-select: none;
 
+  &:hover {
+    transform: translate3d(0, -2px, 0);
+  }
+
 
   .btn-ttl {
     position: relative;
@@ -32,3 +36,5 @@
   }
 
 }
+
+

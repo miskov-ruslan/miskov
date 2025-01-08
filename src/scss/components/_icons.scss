@@ -5,31 +5,32 @@
 }
 
 .svg-stack-vue {
-  @include svg-icon(32px, 32px, 'stack-vue');
+  @include svg-icon(48px, 48px, 'stack-vue');
 }
 .svg-stack-javascript {
-  @include svg-icon(32px, 32px, 'stack-javascript');
+  @include svg-icon(48px, 48px, 'stack-javascript');
+  --icon-color: yellow;
 }
 .svg-stack-nuxt {
-  @include svg-icon(32px, 32px, 'stack-nuxt');
+  @include svg-icon(48px, 48px, 'stack-nuxt');
 }
 .svg-stack-jquery {
-  @include svg-icon(32px, 32px, 'stack-jquery');
+  @include svg-icon(48px, 48px, 'stack-jquery');
 }
 .svg-stack-figma {
-  @include svg-icon(32px, 32px, 'stack-figma');
+  @include svg-icon(48px, 48px, 'stack-figma');
 }
 .svg-stack-git {
-  @include svg-icon(32px, 32px, 'stack-git');
+  @include svg-icon(48px, 48px, 'stack-git');
 }
 .svg-stack-html {
-  @include svg-icon(32px, 32px, 'stack-html5');
+  @include svg-icon(48px, 48px, 'stack-html5');
 }
 .svg-stack-css {
-  @include svg-icon(32px, 32px, 'stack-css3');
+  @include svg-icon(48px, 48px, 'stack-css3');
 }
 .svg-stack-webpack {
-  @include svg-icon(32px, 32px, 'stack-webpack');
+  @include svg-icon(48px, 48px, 'stack-webpack');
 }
 .svg-figure-1 {
   @include svg-icon(141px, 137px, 'figure-1');

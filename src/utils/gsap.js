@@ -45,12 +45,12 @@ const stackItems = document.querySelectorAll(".technology-stack__item");
 
 stackItems.forEach((item, index) => {
     gsap.from(item, {
-        borderColor: 'transparent',
         opacity: 0,
+        y: 20,
         yoyo: true,
-        duration: 0.3,             // Длительность анимации
-        ease: "power2.out",      // Плавное затухание
-        delay: index / 12,      // Задержка, чтобы эффект срабатывал последовательно
+        duration: 0.2,             // Длительность анимации
+        ease: "power4.out",      // Плавное затухание
+        delay: index / 20,      // Задержка, чтобы эффект срабатывал последовательно
         scrollTrigger: {
             trigger: ".technology-stack__list",         // Запускаем для каждой карточки
             start: "top 80%",      // Анимация начнётся, когда верх карточки достигнет 80% от высоты окна
@@ -76,9 +76,27 @@ const UpElements = [
 ];
 
 UpElements.forEach((element) => {
-    upTl.from(element, {
-        scrollTrigger: { trigger: element, start: "top bottom", scrub: 1}, ...upTlSettings
-    });
+    gsap.fromTo(
+        element,
+        { y: 40, opacity: 0 }, // Начальное состояние
+        {
+            y: 0,
+            opacity: 1, // Конечное состояние с прозрачностью 1
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: element,
+                start: "top bottom",
+                end: "top center", // Задаём диапазон анимации
+                scrub: 1, // Оставляем scrub для синхронизации с прокруткой
+                onUpdate: (self) => {
+                    // Принудительно выставляем opacity 1 в конце
+                    if (self.progress === 1) {
+                        gsap.set(element, { opacity: 1 });
+                    }
+                }
+            }
+        }
+    );
 });
 
 
@@ -88,6 +106,7 @@ const introTlSettings = { scale: 1.2, duration: 1.1, ease: "power1.out" };
 introTl
     .from(".h1", introTlSettings)
     .from(".intro__role", introTlSettings, "<");
+
 
 
 
